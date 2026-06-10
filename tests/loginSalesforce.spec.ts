@@ -2,17 +2,6 @@ import {expect} from '@playwright/test'
 import {test} from "../fixtures/loginSalesforceFixture.spec"
 
 test("Login into Salesforce application", async({loginSetUp, page})=> {
-    // await page.goto("https://login.salesforce.com");
-    // //Log In with Email
-    // await page.locator("#gidr-email-log-in-button").click();
-    // //Enter email
-    // await page.locator("[name='identifier']").fill("neerajsetiayk22@gmail.com");
-    // await page.locator("//button[text()='Continue']").click();
-    // //Enter password
-    // await page.locator("[name='password']").fill("Test@654leaf");
-    // //Click Login button
-    // await page.locator("//button[text()='Log In']").click();
-    // await page.waitForTimeout(10000);
 await page.getByTitle("App Launcher").click();
 await page.getByLabel("View All Applications").click();
 //await page.waitForLoadState();
