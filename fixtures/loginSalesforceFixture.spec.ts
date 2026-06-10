@@ -14,6 +14,7 @@ export const test = base.extend<hooksFixture>({
     await page.locator("#gidr-email-log-in-button").click();
     //Enter email
     await page.locator("[name='identifier']").fill("neerajsetiayk22@gmail.com");
+    //Click Continue button
     await page.locator("//button[text()='Continue']").click();
     //Enter password
     await page.locator("[name='password']").fill("Test@654leaf");

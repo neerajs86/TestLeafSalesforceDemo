@@ -2,10 +2,11 @@ import {expect} from '@playwright/test'
 import {test} from "../fixtures/loginSalesforceFixture.spec"
 
 test("Login into Salesforce application", async({loginSetUp, page})=> {
+//Click App Launcher icon
 await page.getByTitle("App Launcher").click();
+//Click View All Applications link
 await page.getByLabel("View All Applications").click();
-//await page.waitForLoadState();
-await page.waitForTimeout(5000);
+//Click Sales tab
 await page.locator("one-app-launcher-app-tile[data-name='Sales']").click();
 //Click Leads tab
 await page.getByTestId("Lead").click();
