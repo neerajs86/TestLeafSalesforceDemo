@@ -12,3 +12,10 @@ export function generateRandomString(length : number) : string {
 export function currentDate() : string {
     return new Date().toLocaleDateString("en-GB");
 }
+
+export function tomorrowDate() : string {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    // Formats automatically based on the user's system locale
+    return (tomorrow.toLocaleDateString("en-GB")); 
+}

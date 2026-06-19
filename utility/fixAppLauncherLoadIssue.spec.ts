@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 
 export async function fixAppLaunchLoadIssue(page : Page) {
     const spinnerL = page.locator("[class='slds-spinner_container']");
-    if(await spinnerL.isVisible()) {
+    while(await spinnerL.isVisible()) {
     // Reload and wait for network activity to settle
     await page.reload();
     //Click App Launcher icon

@@ -28,7 +28,6 @@ await page.locator("[placeholder='Search Accounts...']").click();
 //Select Account Name
 await page.locator("[aria-label='Recent Items'] li span").first().click();
 //Select Choose Date
-console.log(currentDate());
 await page.locator("[name='CloseDate']").fill(currentDate());
 //Select Stage Date
 await page.locator("button[aria-label='Stage']").click();
@@ -38,7 +37,7 @@ await page.getByTitle("Save").last().click();
 
 //Verify Opportunity Name in Toast message and title
 const toastTxt = await page.locator("[data-aura-class='forceActionsText']").innerText();
-expect(toastTxt).toContain(opportunityValue);
+expect(toastTxt).toBe(`Opportunity "${opportunityValue}" was created.`);
 const titleTxt = await page.locator("lightning-formatted-text[slot='primaryField']").innerText();
 expect(titleTxt).toContain(opportunityValue);
 });
