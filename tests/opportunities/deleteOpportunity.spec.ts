@@ -1,8 +1,9 @@
 import {expect} from '@playwright/test'
 import {test} from "../../fixtures/loginSalesforceFixture.spec"
 import { fixAppLaunchLoadIssue } from '../../utility/fixAppLauncherLoadIssue.spec';
+import {opportunityValue} from "./createNewOpportunity.spec";
 
-const opportunityName = "Salesforce Automation by Neeraj_T2FZ";
+const opportunityName = opportunityValue;
 
 //Edit Opportunities Test-case
 test("Delete Opportunities", async({loginSetUp, page})=>{

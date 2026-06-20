@@ -1,3 +1,4 @@
+//Function to get Random String
 export function generateRandomString(length : number) : string {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -9,10 +10,12 @@ export function generateRandomString(length : number) : string {
     return result;
 }
 
+//Function to get Current Date
 export function currentDate() : string {
     return new Date().toLocaleDateString("en-GB");
 }
 
+//Function to get Tomorrow Date
 export function tomorrowDate() : string {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);

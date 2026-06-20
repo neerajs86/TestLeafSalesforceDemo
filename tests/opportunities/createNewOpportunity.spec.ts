@@ -3,6 +3,8 @@ import {test} from "../../fixtures/loginSalesforceFixture.spec"
 import { generateRandomString, currentDate } from '../../utility/commonMethods.spec';
 import { fixAppLaunchLoadIssue } from '../../utility/fixAppLauncherLoadIssue.spec';
 
+export let opportunityValue: any;
+
 //Create Opportunities Test-case
 test("Create Opportunities", async({loginSetUp, page})=>{
 //Click App Launcher icon
@@ -21,7 +23,7 @@ await page.locator("a[title='New']").click();
 const opportunityName = page.locator("[name='Name']")
 await opportunityName.fill("Salesforce Automation by Neeraj_" + generateRandomString(4));
 //Get Opportunity Name value
-const opportunityValue = await opportunityName.inputValue();
+opportunityValue = await opportunityName.inputValue();
 
 //Enter Account Name Choose Date
 await page.locator("[placeholder='Search Accounts...']").click();
